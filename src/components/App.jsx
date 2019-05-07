@@ -6,7 +6,7 @@ function App() {
   return (
     <GuestProvider>
       <div className="App">
-        Seating Chart
+        TableMate
         <GuestList />
       </div>
     </GuestProvider>
