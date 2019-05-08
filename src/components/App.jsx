@@ -1,14 +1,20 @@
-import React from 'react';
-import { GuestProvider } from '../store/GuestContext';
-import GuestList from './GuestList';
+import React from "react";
+import { Router } from "@reach/router";
+import { GuestProvider } from "../store/GuestContext";
+
+import GuestView from "../views/GuestView";
+import HomeView from "../views/HomeView";
+import Layout from "./layout/Layout";
 
 function App() {
   return (
     <GuestProvider>
-      <div className="App">
-        TableMate
-        <GuestList />
-      </div>
+      <Layout>
+        <Router>
+          <HomeView path="/" />
+          <GuestView path="/guests" />
+        </Router>
+      </Layout>
     </GuestProvider>
   );
 }
