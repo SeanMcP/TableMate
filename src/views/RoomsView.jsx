@@ -5,7 +5,7 @@ import { useRoomContext } from "../store/RoomContext";
 import RoomsList from "../components/RoomsList";
 
 function RoomsView(props) {
-  const [state, actions] = useRoomContext();
+  const [, actions] = useRoomContext();
   function handleSubmit(values, { resetForm }) {
     actions.addRoom(values.name, values.tableSize);
     resetForm();

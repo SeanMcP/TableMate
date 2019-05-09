@@ -4,7 +4,7 @@ import titleCase from "title-case";
 import { useRoomContext } from "../store/RoomContext";
 
 function RoomsList(props) {
-  const [state, actions] = useRoomContext();
+  const [state] = useRoomContext();
 
   function renderRoomLinks(byName) {
     const output = [];
