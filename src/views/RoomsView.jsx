@@ -4,7 +4,7 @@ import Input from "../components/form/Input";
 import { useRoomContext } from "../store/RoomContext";
 import RoomsList from "../components/RoomsList";
 
-function RoomView(props) {
+function RoomsView(props) {
   const [state, actions] = useRoomContext();
   function handleSubmit(values, { resetForm }) {
     actions.addRoom(values.name, values.tableSize);
@@ -28,4 +28,4 @@ function RoomView(props) {
   );
 }
 
-export default RoomView;
+export default RoomsView;

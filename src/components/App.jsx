@@ -5,6 +5,7 @@ import { RoomProvider } from "../store/RoomContext";
 
 import GuestView from "../views/GuestView";
 import HomeView from "../views/HomeView";
+import RoomView from "../views/RoomView";
 import RoomsView from "../views/RoomsView";
 import Layout from "./layout/Layout";
 
@@ -17,6 +18,7 @@ function App() {
             <HomeView path="/" />
             <GuestView path="/guests" />
             <RoomsView path="/rooms" />
+            <RoomView path="/room/:name" />
           </Router>
         </Layout>
       </RoomProvider>
