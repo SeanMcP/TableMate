@@ -1,24 +1,25 @@
 import React from "react";
 import { Formik } from "formik";
-import GuestList from "../components/GuestList";
 import Input from "../components/form/Input";
-import { useGuestContext } from "../store/GuestContext";
+import { useRoomContext } from "../store/RoomContext";
+import RoomsList from "../components/RoomsList";
 
-function GuestView(props) {
-  const [state, actions] = useGuestContext();
+function RoomView(props) {
+  const [state, actions] = useRoomContext();
   function handleSubmit(values, { resetForm }) {
-    actions.addGuest(values.name);
+    actions.addRoom(values.name, values.tableSize);
     resetForm();
   }
   return (
     <div>
-      <GuestList {...state} {...actions} />
+      <RoomsList />
       <Formik
         initialValues={{ name: "" }}
         onSubmit={handleSubmit}
         render={props => (
           <form onSubmit={props.handleSubmit}>
-            <Input name="name" type="text" />
+            <Input label="Add a room" name="name" type="text" />
+            <Input label="Table size" name="tableSize" type="number" />
             <button type="submit">Submit</button>
           </form>
         )}
@@ -27,4 +28,4 @@ function GuestView(props) {
   );
 }
 
-export default GuestView;
+export default RoomView;

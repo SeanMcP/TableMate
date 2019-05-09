@@ -1,14 +1,28 @@
-import { ROOM_ACTION_TYPES } from './RoomActions'
+import paramCase from "param-case";
+import { ROOM_ACTION_TYPES } from "./RoomActions";
 
 export const initialState = {
-  byName: {}
+  byName: {
+    "the-veranda": {
+      tableSize: 6,
+      tables: []
+    },
+    "the-overlook": {
+      tableSize: 8,
+      tables: []
+    },
+    poolside: {
+      tableSize: 4,
+      tables: []
+    }
+  }
 };
 
 export function reducer(state, action) {
   switch (action.type) {
     case ROOM_ACTION_TYPES.ADD_ROOM: {
       const byName = { ...state.byName };
-      byName[action.name] = {
+      byName[paramCase(action.name)] = {
         tableSize: action.tableSize || 8,
         tables: []
       };
