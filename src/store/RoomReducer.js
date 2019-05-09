@@ -5,15 +5,15 @@ export const initialState = {
   byName: {
     "the-veranda": {
       tableSize: 6,
-      tables: []
+      tables: [['Sean']]
     },
     "the-overlook": {
       tableSize: 8,
-      tables: []
+      tables: [['Sean']]
     },
     poolside: {
       tableSize: 4,
-      tables: []
+      tables: [['Sean']]
     }
   }
 };
