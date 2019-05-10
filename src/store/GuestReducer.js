@@ -1,7 +1,20 @@
 import { GUEST_ACTION_TYPES } from './GuestActions'
 
 export const initialState = {
-  byName: {}
+  byName: {
+    Sean: {
+      room: 'The Outlook'
+    },
+    Anne: {
+      room: 'The Outlook'
+    },
+    Samuel: {
+      room: 'The Outlook'
+    },
+    Abby: {
+      room: 'Poolside'
+    }
+  }
 };
 
 export function reducer(state, action) {
@@ -9,8 +22,7 @@ export function reducer(state, action) {
     case GUEST_ACTION_TYPES.ADD_GUEST: {
       const byName = { ...state.byName };
       byName[action.name] = {
-        room: null,
-        table: null
+        room: null
       };
       return {
         ...state,
