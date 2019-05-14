@@ -18,11 +18,12 @@ function GuestList(props) {
   }
   return (
     <ReactTable
-      data={formatData(state)}
+      className="-striped -highlight"
       columns={[
         { Header: "Name", accessor: "name" },
         { Header: "Room", accessor: "room" }
       ]}
+      data={formatData(state)}
       defaultSorted={[
         {
           id: "name",
