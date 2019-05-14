@@ -7,6 +7,7 @@ import GuestView from "../views/GuestView";
 import HomeView from "../views/HomeView";
 import RoomView from "../views/RoomView";
 import RoomsView from "../views/RoomsView";
+import SeatingView from "../views/SeatingView";
 import Layout from "./layout/Layout";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <GuestView path="/guests" />
             <RoomsView path="/rooms" />
             <RoomView path="/room/:name" />
+            <SeatingView path="/seating" />
           </Router>
         </Layout>
       </RoomProvider>
