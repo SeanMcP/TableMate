@@ -1,17 +1,19 @@
 import React from "react";
 import ReactTable from "react-table";
-import { useGuestContext } from "../store/GuestContext";
+import { useStore } from "../store/StoreContext";
 
 import "react-table/react-table.css";
 
 function GuestList(props) {
-  const [state] = useGuestContext();
-  function formatData({ byName }) {
+  const [state] = useStore();
+  function formatData({ guestsByRoom }) {
     const output = [];
-    for (const name in byName) {
-      output.push({
-        name,
-        room: byName[name].room
+    for (const room in guestsByRoom) {
+      guestsByRoom[room].forEach(guest => {
+        output.push({
+          name: guest,
+          room: room === "NONE" ? undefined : room
+        });
       });
     }
     return output;

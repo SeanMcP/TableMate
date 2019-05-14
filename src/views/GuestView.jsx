@@ -2,17 +2,17 @@ import React from "react";
 import { Formik } from "formik";
 import GuestList from "../components/GuestList";
 import Input from "../components/form/Input";
-import { useGuestContext } from "../store/GuestContext";
+import { useStore } from "../store/StoreContext";
 
 function GuestView(props) {
-  const [state, actions] = useGuestContext();
+  const [, actions] = useStore();
   function handleSubmit(values, { resetForm }) {
-    actions.addGuest(values.name);
+    actions.addNewGuest(values.name);
     resetForm();
   }
   return (
     <div>
-      <GuestList {...state} {...actions} />
+      <GuestList />
       <Formik
         initialValues={{ name: "" }}
         onSubmit={handleSubmit}
