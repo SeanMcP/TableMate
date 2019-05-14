@@ -3,7 +3,7 @@ import { useStore } from "../store/StoreContext";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 function SeatingView(props) {
-  const [state] = useStore();
+  const [state, actions] = useStore();
   const { guestsByRoom } = state;
   const onDragEnd = result => {
     const { source, destination } = result;
@@ -14,6 +14,7 @@ function SeatingView(props) {
     }
 
     if (source.droppableId === destination.droppableId) {
+      // Reorder at same table
       //   const items = reorder(
       //     this.getList(source.droppableId),
       //     source.index,
@@ -25,16 +26,13 @@ function SeatingView(props) {
       //   }
       //   this.setState(state);
     } else {
-      //   const result = move(
-      //     this.getList(source.droppableId),
-      //     this.getList(destination.droppableId),
-      //     source,
-      //     destination
-      //   );
-      //   this.setState({
-      //     items: result.droppable,
-      //     selected: result.droppable2
-      //   });
+      // Move to new table
+      actions.moveGuest(
+        source.droppableId,
+        source.index,
+        destination.droppableId,
+        destination.index
+      );
     }
   };
 
