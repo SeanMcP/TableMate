@@ -1,10 +1,10 @@
 import React from "react";
-import { useGuestContext } from "../store/GuestContext";
+import { useStore } from "../store/StoreContext";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 
 function SeatingView(props) {
-  const [data] = useGuestContext();
-  const guestsByRoom = sortGuestsByRoom(data.byName);
+  const [state] = useStore();
+  const { guestsByRoom } = state;
   const onDragEnd = result => {
     const { source, destination } = result;
 
@@ -50,7 +50,7 @@ function SeatingView(props) {
                   ref={provided.innerRef}
                   // style={getListStyle(snapshot.isDraggingOver)}
                 >
-                  <h2>{room}</h2>
+                  <h2>{room === "NONE" ? "To be seated" : room}</h2>
                   {guests.map((guest, index) => (
                     <Draggable key={guest} draggableId={guest} index={index}>
                       {(provided, snapshot) => (
@@ -77,18 +77,6 @@ function SeatingView(props) {
       </DragDropContext>
     </div>
   );
-}
-
-function sortGuestsByRoom(guestsByName) {
-  const sorted = {};
-  for (const name in guestsByName) {
-    const { room } = guestsByName[name];
-    if (!sorted.hasOwnProperty(room)) {
-      sorted[room] = [];
-    }
-    sorted[room].push(name);
-  }
-  return sorted;
 }
 
 export default SeatingView;

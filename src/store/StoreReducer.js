@@ -20,6 +20,15 @@ export function reducer(state, action) {
         guestsByRoom
       };
     }
+    case STORE_ACTION_TYPES.ADD_NEW_ROOM: {
+      const { name } = action;
+      const guestsByRoom = { ...state.guestsByRoom };
+      guestsByRoom[name] = [];
+      return {
+        ...state,
+        guestsByRoom
+      };
+    }
     default: {
       return state;
     }

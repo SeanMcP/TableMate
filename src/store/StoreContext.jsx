@@ -1,6 +1,6 @@
 import React from "react";
 import { initialState, reducer } from "./StoreReducer";
-import { addNewGuest } from "./StoreActions";
+import { addNewGuest, addNewRoom } from "./StoreActions";
 
 const StoreContext = React.createContext();
 
@@ -22,7 +22,8 @@ export function useStore() {
   }
   const { state, dispatch } = context;
   const actions = {
-    addNewGuest: addNewGuest(dispatch)
+    addNewGuest: addNewGuest(dispatch),
+    addNewRoom: addNewRoom(dispatch)
   };
   return [state, actions];
 }

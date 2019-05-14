@@ -8,7 +8,6 @@ function Layout({ children }) {
         <Link to="/">TableMate</Link>
         <nav>
           <Link to="/guests">Guest List</Link>
-          <Link to="/rooms">Rooms</Link>
           <Link to="/seating">Seating</Link>
         </nav>
       </header>
