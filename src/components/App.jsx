@@ -6,18 +6,21 @@ import GuestView from "../views/GuestView";
 import HomeView from "../views/HomeView";
 import SeatingView from "../views/SeatingView";
 import Layout from "./layout/Layout";
+import StyleProvider from '../styles/StyleProvider';
 
 function App() {
   return (
-    <StoreProvider>
-      <Layout>
-        <Router>
-          <HomeView path="/" />
-          <GuestView path="/guests" />
-          <SeatingView path="/seating" />
-        </Router>
-      </Layout>
-    </StoreProvider>
+    <StyleProvider>
+      <StoreProvider>
+        <Layout>
+          <Router>
+            <HomeView path="/" />
+            <GuestView path="/guests" />
+            <SeatingView path="/seating" />
+          </Router>
+        </Layout>
+      </StoreProvider>
+    </StyleProvider>
   );
 }
 
