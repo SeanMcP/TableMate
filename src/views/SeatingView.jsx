@@ -1,6 +1,6 @@
 import React from "react";
-import { useStore } from "../store/StoreContext";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
+import { useStore } from "../store/StoreContext";
 
 function SeatingView(props) {
   const [state, actions] = useStore();
@@ -15,16 +15,7 @@ function SeatingView(props) {
 
     if (source.droppableId === destination.droppableId) {
       // Reorder at same table
-      //   const items = reorder(
-      //     this.getList(source.droppableId),
-      //     source.index,
-      //     destination.index
-      //   );
-      //   let state = { items };
-      //   if (source.droppableId === "droppable2") {
-      //     state = { selected: items };
-      //   }
-      //   this.setState(state);
+      actions.reorderGuest(source.droppableId, source.index, destination.index);
     } else {
       // Move to new table
       actions.moveGuest(

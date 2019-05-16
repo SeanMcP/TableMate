@@ -39,6 +39,16 @@ export function reducer(state, action) {
         guestsByRoom
       };
     }
+    case STORE_ACTION_TYPES.REORDER_GUEST: {
+      const { source, sourceIndex, destinationIndex } = action;
+      const guestsByRoom = { ...state.guestsByRoom };
+      const name = guestsByRoom[source].splice(sourceIndex, 1)[0];
+      guestsByRoom[source].splice(destinationIndex, 0, name);
+      return {
+        ...state,
+        guestsByRoom
+      };
+    }
     default: {
       return state;
     }
