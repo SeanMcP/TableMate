@@ -28,7 +28,9 @@ function SeatingView(props) {
   };
 
   return (
-    <div>
+    <>
+      <h1>Seating</h1>
+      <p>View and rearrange the seating chart.</p>
       <DragDropContext onDragEnd={onDragEnd}>
         {Object.keys(guestsByRoom).map(room => {
           const guests = guestsByRoom[room];
@@ -64,7 +66,7 @@ function SeatingView(props) {
           );
         })}
       </DragDropContext>
-    </div>
+    </>
   );
 }
 

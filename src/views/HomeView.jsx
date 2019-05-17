@@ -3,10 +3,14 @@ import { Link } from "@reach/router";
 
 function HomeView(props) {
   return (
-    <div>
-      <h2>Hello world</h2>
-      <Link to="/guests">Manage guests</Link>
-    </div>
+    <>
+      <h1>TableMate</h1>
+      <p>
+        Easily and quickly manage guests and build a seating chart for your next
+        event.
+      </p>
+      <Link to="/guests">Get started with the guest list!</Link>
+    </>
   );
 }
 

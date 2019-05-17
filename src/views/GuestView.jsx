@@ -11,19 +11,21 @@ function GuestView(props) {
     resetForm();
   }
   return (
-    <div>
-      <GuestList />
+    <>
+      <h1>Guests</h1>
+      <p>Add guests and view their seating assignment.</p>
       <Formik
         initialValues={{ name: "" }}
         onSubmit={handleSubmit}
         render={props => (
           <form onSubmit={props.handleSubmit}>
-            <Input name="name" type="text" />
-            <button type="submit">Submit</button>
+            <Input label="Guest name" name="name" type="text" />
+            <button type="submit">Add guest</button>
           </form>
         )}
       />
-    </div>
+      <GuestList />
+    </>
   );
 }
 
