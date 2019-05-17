@@ -2,6 +2,10 @@ import React from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { useStore } from "../store/StoreContext";
 
+import DropZone from "../components/seating/DropZone";
+import Guest from "../components/seating/Guest";
+import Group from "../components/seating/Group";
+
 function SeatingView(props) {
   const [state, actions] = useStore();
   const { guestsByRoom } = state;
@@ -35,34 +39,36 @@ function SeatingView(props) {
         {Object.keys(guestsByRoom).map(room => {
           const guests = guestsByRoom[room];
           return (
-            <Droppable droppableId={room} key={room}>
-              {(provided, snapshot) => (
-                <div
-                  ref={provided.innerRef}
-                  // style={getListStyle(snapshot.isDraggingOver)}
-                >
-                  <h2>{room === "NONE" ? "To be seated" : room}</h2>
-                  {guests.map((guest, index) => (
-                    <Draggable key={guest} draggableId={guest} index={index}>
-                      {(provided, snapshot) => (
-                        <div
-                          ref={provided.innerRef}
-                          {...provided.draggableProps}
-                          {...provided.dragHandleProps}
-                          // style={getItemStyle(
-                          //   snapshot.isDragging,
-                          //   provided.draggableProps.style
-                          // )}
-                        >
-                          {guest}
-                        </div>
-                      )}
-                    </Draggable>
-                  ))}
-                  {provided.placeholder}
-                </div>
-              )}
-            </Droppable>
+            <Group key={room} title={room}>
+              <Droppable droppableId={room}>
+                {(provided, snapshot) => (
+                  <DropZone
+                    active={snapshot.isDraggingOver}
+                    ref={provided.innerRef}
+                  >
+                    {guests.map((guest, index) => (
+                      <Draggable key={guest} draggableId={guest} index={index}>
+                        {(provided, snapshot) => (
+                          <Guest
+                            ref={provided.innerRef}
+                            {...provided.draggableProps}
+                            {...provided.dragHandleProps}
+                            active={snapshot.isDragging}
+                            // style={getItemStyle(
+                            //   snapshot.isDragging,
+                            //   provided.draggableProps.style
+                            // )}
+                          >
+                            {guest}
+                          </Guest>
+                        )}
+                      </Draggable>
+                    ))}
+                    {provided.placeholder}
+                  </DropZone>
+                )}
+              </Droppable>
+            </Group>
           );
         })}
       </DragDropContext>
