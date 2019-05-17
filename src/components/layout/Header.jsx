@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "@reach/router";
 
 import ContentContainer from "./ContentContainer";
@@ -21,7 +21,7 @@ const SNav = styled.nav`
   }
 `;
 
-const SLink = styled(Link)`
+const SLink = styled(({ bold, ...props }) => <Link {...props} />)`
   border: 1px solid transparent;
   border-radius: 0.25rem;
   color: white;
@@ -38,6 +38,12 @@ const SLink = styled(Link)`
   &:active {
     border-color: rgba(0, 0, 0, 0.25);
   }
+
+  ${p =>
+    p.bold &&
+    css`
+      font-weight: bold;
+    `}
 `;
 
 function Header(props) {
@@ -45,7 +51,9 @@ function Header(props) {
     <SHeader {...props}>
       <ContentContainer>
         <SDiv>
-          <SLink to="/">TableMate</SLink>
+          <SLink to="/" bold>
+            TableMate
+          </SLink>
           <SNav>
             <SLink to="/guests">Guests</SLink>
             <SLink to="/seating">Seating</SLink>
