@@ -9,5 +9,7 @@ export default {
     inverseText: 'white',
     primary: '#212121',
     accent: '#4CAF50',
+    accentLight: '#A5D6A7',
+    accentDark: '#2E7D32',
     tertiary: '#EF5350'
 }

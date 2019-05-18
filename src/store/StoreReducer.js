@@ -3,9 +3,9 @@ import { STORE_ACTION_TYPES } from "./StoreActions";
 export const initialState = {
   guestsByRoom: {
     "The Veranda": ["Sam"],
-    "The Overlook": ["Anne"],
+    "The Overlook": ["Sean"],
     NONE: ["Abby"],
-    Poolside: ["Sean"]
+    Poolside: ["Anne"]
   }
 };
 

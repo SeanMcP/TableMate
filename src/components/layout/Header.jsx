@@ -36,8 +36,8 @@ const SLink = styled(({ bold, ...props }) => <Link {...props} />)`
   }
 
   &:active {
-    border-color: ${p => p.theme.accent};
-    color: ${p => p.theme.accent};
+    border-color: ${p => p.theme.accentLight};
+    color: ${p => p.theme.accentLight};
   }
 
   ${p =>

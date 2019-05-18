@@ -4,6 +4,7 @@ export default createGlobalStyle`
     body {
         background: ${p => p.theme.background};
         color: ${p => p.theme.text};
+        font-size: 16px;
         margin: 0;
         padding: 0;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -14,7 +15,7 @@ export default createGlobalStyle`
     }
 
     a {
-        color: ${p => p.theme.accent};
+        color: ${p => p.theme.accentDark};
     }
 
 `;

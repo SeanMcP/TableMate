@@ -12,7 +12,7 @@ function View({ children, title, description }) {
   }, [document]);
   return (
     <ContentContainer>
-      <h2>{title}</h2>
+      <h1>{title}</h1>
       <p>{description}</p>
       {children}
     </ContentContainer>
