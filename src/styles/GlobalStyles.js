@@ -12,4 +12,9 @@ export default createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
+
+    a {
+        color: ${p => p.theme.accent};
+    }
+
 `;

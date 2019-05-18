@@ -4,7 +4,7 @@ import styled from "styled-components";
 import ContentContainer from "./ContentContainer";
 
 const SFooter = styled.footer`
-  background: ${p => p.theme.text};
+  background: ${p => p.theme.footerBackground};
   border-top: ${p => p.theme.border};
   color: ${p => p.theme.inverseText};
   padding: 1rem 0;
