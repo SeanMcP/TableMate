@@ -2,6 +2,7 @@ import React from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { useStore } from "../store/StoreContext";
 
+import ContentContainer from "../components/layout/ContentContainer";
 import DropZone from "../components/seating/DropZone";
 import Guest from "../components/seating/Guest";
 import Group from "../components/seating/Group";
@@ -32,7 +33,7 @@ function SeatingView(props) {
   };
 
   return (
-    <>
+    <ContentContainer>
       <h1>Seating</h1>
       <p>View and rearrange the seating chart.</p>
       <DragDropContext onDragEnd={onDragEnd}>
@@ -72,7 +73,7 @@ function SeatingView(props) {
           );
         })}
       </DragDropContext>
-    </>
+    </ContentContainer>
   );
 }
 

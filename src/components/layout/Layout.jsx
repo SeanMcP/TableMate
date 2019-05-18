@@ -20,7 +20,7 @@ function Layout({ children }) {
     <SContainerDiv>
       <Header />
       <SMain>
-        <ContentContainer>{children}</ContentContainer>
+        {children}
       </SMain>
       <Footer />
     </SContainerDiv>

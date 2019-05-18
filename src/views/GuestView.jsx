@@ -3,6 +3,7 @@ import { Formik } from "formik";
 
 import { useStore } from "../store/StoreContext";
 
+import ContentContainer from "../components/layout/ContentContainer";
 import GuestList from "../components/GuestList";
 import Button from "../components/form/Button";
 import Input from "../components/form/Input";
@@ -16,7 +17,7 @@ function GuestView(props) {
     }
   }
   return (
-    <>
+    <ContentContainer>
       <h1>Guests</h1>
       <p>Add guests and view their seating assignment.</p>
       <Formik
@@ -30,7 +31,7 @@ function GuestView(props) {
         )}
       />
       <GuestList />
-    </>
+    </ContentContainer>
   );
 }
 
