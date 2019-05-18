@@ -6,7 +6,7 @@ export default styled.div`
   ${p =>
     p.active &&
     css`
-      background: white;
+      background: ${p => p.theme.inverseText};
       box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
       display: inline;
     `}

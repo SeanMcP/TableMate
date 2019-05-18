@@ -7,7 +7,7 @@ const SErrorTextDiv = styled.div`
 `;
 
 const SInput = styled.input`
-  border: 1px solid ${p => p.theme.borderColor};
+  border: ${p => p.theme.border};
   font-family: inherit;
   font-size: inherit;
   padding: 0.5rem;

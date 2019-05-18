@@ -6,7 +6,7 @@ import ContentContainer from "./ContentContainer";
 
 const SHeader = styled.header`
   background: ${p => p.theme.primary};
-  border-bottom: 1px solid ${p => p.theme.borderColor};
+  border-bottom: ${p => p.theme.border};
   padding: 1rem 0;
 `;
 
@@ -24,14 +24,14 @@ const SNav = styled.nav`
 
 const SLink = styled(({ bold, ...props }) => <Link {...props} />)`
   border: 1px solid transparent;
-  color: white;
+  color: ${p => p.theme.inverseText};
   padding: 0.25rem 0.5rem;
   margin: 0 calc((0.25rem + 1px) * -1);
   text-decoration: none;
 
   &:hover,
   &:focus {
-    border-color: white;
+    border-color: ${p => p.theme.inverseText};
     outline: none;
   }
 

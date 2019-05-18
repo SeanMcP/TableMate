@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const SDiv = styled.div`
-  background: white;
-  border: 1px solid ${p => p.theme.borderColor};
+  background: ${p => p.theme.inverseText};
+  border: ${p => p.theme.border};
   padding: 1rem;
 
   h2 {

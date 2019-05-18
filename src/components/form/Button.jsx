@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const Button = styled.button`
-  border: 1px solid ${p => p.theme.borderColor};
+  border: ${p => p.theme.border};
   cursor: pointer;
   font-family: inherit;
   font-size: inherit;
