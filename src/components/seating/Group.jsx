@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const SDiv = styled.div`
   background: white;
-  border: 1px solid rgba(0, 0, 0, 0.25);
+  border: 1px solid ${p => p.theme.borderColor};
   padding: 1rem;
 
   h2 {
