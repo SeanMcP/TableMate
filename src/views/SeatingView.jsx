@@ -2,10 +2,10 @@ import React from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { useStore } from "../store/StoreContext";
 
-import ContentContainer from "../components/layout/ContentContainer";
 import DropZone from "../components/seating/DropZone";
 import Guest from "../components/seating/Guest";
 import Group from "../components/seating/Group";
+import View from "../components/layout/View";
 
 function SeatingView(props) {
   const [state, actions] = useStore();
@@ -13,8 +13,8 @@ function SeatingView(props) {
   const onDragEnd = result => {
     const { source, destination } = result;
 
-    // dropped outside the list
     if (!destination) {
+      // dropped outside the list
       return;
     }
 
@@ -33,9 +33,7 @@ function SeatingView(props) {
   };
 
   return (
-    <ContentContainer>
-      <h1>Seating</h1>
-      <p>View and rearrange the seating chart.</p>
+    <View title="Seating" description="View and rearrange the seating chart.">
       <DragDropContext onDragEnd={onDragEnd}>
         {Object.keys(guestsByRoom).map(room => {
           const guests = guestsByRoom[room];
@@ -55,10 +53,6 @@ function SeatingView(props) {
                             {...provided.draggableProps}
                             {...provided.dragHandleProps}
                             active={snapshot.isDragging}
-                            // style={getItemStyle(
-                            //   snapshot.isDragging,
-                            //   provided.draggableProps.style
-                            // )}
                           >
                             {guest}
                           </Guest>
@@ -73,7 +67,7 @@ function SeatingView(props) {
           );
         })}
       </DragDropContext>
-    </ContentContainer>
+    </View>
   );
 }
 

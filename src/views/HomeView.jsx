@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "@reach/router";
 import styled from "styled-components";
 
-import ContentContainer from "../components/layout/ContentContainer";
+import View from "../components/layout/View";
 
 const SWindowDiv = styled.div`
   background: url(${require("../images/reception.jpg")}) center;
@@ -16,14 +16,15 @@ function HomeView(props) {
   return (
     <>
       <SWindowDiv />
-      <ContentContainer>
-        <h1>TableMate</h1>
+      <View
+        title="TableMate"
+        description="Easily and quickly manage guests and build a seating chart for your next event."
+      >
         <p>
-          Easily and quickly manage guests and build a seating chart for your
-          next event.
+          <Link to="/guests">Get started with the guest list</Link> or{" "}
+          <Link to="/seating">start building your seating chart</Link>!
         </p>
-        <Link to="/guests">Get started with the guest list</Link> or <Link to="/seating">start building your seating chart</Link>!
-      </ContentContainer>
+      </View>
     </>
   );
 }

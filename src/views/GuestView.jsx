@@ -3,10 +3,10 @@ import { Formik } from "formik";
 
 import { useStore } from "../store/StoreContext";
 
-import ContentContainer from "../components/layout/ContentContainer";
 import GuestList from "../components/GuestList";
 import Button from "../components/form/Button";
 import Input from "../components/form/Input";
+import View from "../components/layout/View";
 
 function GuestView(props) {
   const [, actions] = useStore();
@@ -17,9 +17,10 @@ function GuestView(props) {
     }
   }
   return (
-    <ContentContainer>
-      <h1>Guests</h1>
-      <p>Add guests and view their seating assignment.</p>
+    <View
+      title="Guests"
+      description="Add guests and view their seating assignment."
+    >
       <Formik
         initialValues={{ name: "" }}
         onSubmit={handleSubmit}
@@ -31,7 +32,7 @@ function GuestView(props) {
         )}
       />
       <GuestList />
-    </ContentContainer>
+    </View>
   );
 }
 
