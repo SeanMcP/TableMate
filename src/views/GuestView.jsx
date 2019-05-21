@@ -3,7 +3,7 @@ import { Formik } from "formik";
 
 import { useStore } from "../store/StoreContext";
 
-import GuestList from "../components/GuestList";
+import GuestList from "../components/guest/GuestList";
 import Button from "../components/form/Button";
 import Input from "../components/form/Input";
 import View from "../components/layout/View";

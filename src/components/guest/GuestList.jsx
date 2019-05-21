@@ -3,8 +3,8 @@ import ReactTable from "react-table";
 import styled from "styled-components";
 import "react-table/react-table.css";
 
-import { useStore } from "../store/StoreContext";
-import Button from "./form/Button";
+import { useStore } from "../../store/StoreContext";
+import Button from "../form/Button";
 
 const STableContainerDiv = styled.div`
   margin: 1rem 0;
