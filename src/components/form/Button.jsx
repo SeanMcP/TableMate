@@ -6,7 +6,7 @@ const Button = styled.button`
   cursor: pointer;
   font-family: inherit;
   font-size: inherit;
-  padding: 0.5rem;
+  padding: ${p => !p.small && '0.5rem'};
 
   &:hover {
     background: ${p => p.theme.accentDark};
