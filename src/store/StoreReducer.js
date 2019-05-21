@@ -39,6 +39,15 @@ export function reducer(state, action) {
         guestsByRoom
       };
     }
+    case STORE_ACTION_TYPES.REMOVE_GUEST: {
+      const { name, room } = action;
+      const guestsByRoom = { ...state.guestsByRoom };
+      guestsByRoom[room] = guests[room].filter(item => item !== name);
+      return {
+        ...state,
+        guestsByRoom
+      };
+    }
     case STORE_ACTION_TYPES.REORDER_GUEST: {
       const { source, sourceIndex, destinationIndex } = action;
       const guestsByRoom = { ...state.guestsByRoom };

@@ -1,6 +1,12 @@
 import React from "react";
 import { initialState, reducer } from "./StoreReducer";
-import { addNewGuest, addNewRoom, moveGuest, reorderGuest } from "./StoreActions";
+import {
+  addNewGuest,
+  addNewRoom,
+  moveGuest,
+  removeGuest,
+  reorderGuest
+} from "./StoreActions";
 
 const StoreContext = React.createContext();
 
@@ -25,6 +31,7 @@ export function useStore() {
     addNewGuest: addNewGuest(dispatch),
     addNewRoom: addNewRoom(dispatch),
     moveGuest: moveGuest(dispatch),
+    removeGuest: removeGuest(dispatch),
     reorderGuest: reorderGuest(dispatch)
   };
   return [state, actions];

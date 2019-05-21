@@ -2,6 +2,7 @@ export const STORE_ACTION_TYPES = {
   ADD_NEW_GUEST: "ADD_NEW_GUEST",
   ADD_NEW_ROOM: "ADD_NEW_ROOM",
   MOVE_GUEST: "MOVE_GUEST",
+  REMOVE_GUEST: "REMOVE_GUEST",
   REORDER_GUEST: "REORDER_GUEST"
 };
 
@@ -30,6 +31,15 @@ export function moveGuest(dispatch) {
       sourceIndex,
       destination,
       destinationIndex
+    });
+}
+
+export function removeGuest(dispatch) {
+  return (name, room) =>
+    dispatch({
+      type: STORE_ACTION_TYPES.REMOVE_GUEST,
+      name,
+      room
     });
 }
 
