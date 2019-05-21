@@ -42,7 +42,7 @@ export function reducer(state, action) {
     case STORE_ACTION_TYPES.REMOVE_GUEST: {
       const { name, room } = action;
       const guestsByRoom = { ...state.guestsByRoom };
-      guestsByRoom[room] = guests[room].filter(item => item !== name);
+      guestsByRoom[room] = guestsByRoom[room].filter(item => item !== name);
       return {
         ...state,
         guestsByRoom
