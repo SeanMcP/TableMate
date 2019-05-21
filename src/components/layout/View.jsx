@@ -9,7 +9,7 @@ function View({ children, title, description }) {
     } else {
       document.title = `${title} - TableMate`;
     }
-  }, [document]);
+  }, [title]);
   return (
     <ContentContainer>
       <h1>{title}</h1>
