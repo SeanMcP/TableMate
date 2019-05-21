@@ -5,14 +5,12 @@
   "dependencies": {
     "@reach/router": "^1.2.1",
     "formik": "^2.0.1-alpha.2",
-    "param-case": "^2.1.1",
     "react": "^16.8.6",
     "react-beautiful-dnd": "^11.0.3",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.0",
     "react-table": "^6.10.0",
-    "styled-components": "^4.2.0",
-    "title-case": "^2.1.1"
+    "styled-components": "^4.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
